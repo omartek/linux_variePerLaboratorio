@@ -1,3 +1,0 @@
-
-scrivo qualcosa
-errore
