@@ -1,2 +1,2 @@
 # PIRATEBOX
-Immagine scaricato a Giugno 2020
+Immagine scaricata a Giugno 2020
