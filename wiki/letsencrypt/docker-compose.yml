@@ -1,0 +1,44 @@
+---
+version: "2.1"
+services:
+  letsencrypt:
+    image: linuxserver/letsencrypt
+    container_name: letsencrypt
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - URL=scuolabit.it
+      - SUBDOMAINS=www,
+      - VALIDATION=http
+      #- DNSPLUGIN=cloudflare #optional
+      #- PROPAGATION= #optional
+      #- DUCKDNSTOKEN= #optional
+      - EMAIL= lazzariomar@icalbino.it
+      - ONLY_SUBDOMAINS=false #optional
+      - EXTRA_DOMAINS=corsi.scuolabit.it,calibre.scuolabit.it,etherpad.scuolabit.it
+      - STAGING=false #optional
+    networks:
+    - moodle
+    - calibre
+    - etherpad
+    volumes:
+      - /home/ubuntu/letsencrypt/config:/config
+    ports:
+      - 443:443
+    #  - 80:80
+    restart: unless-stopped
+
+networks:
+  moodle:
+    external:
+      name: moodle_default
+  calibre:
+    external:
+      name: calibre-web
+  etherpad:
+    external:
+      name: etherpad-net
+  
