@@ -16,7 +16,7 @@ services:
       #- DNSPLUGIN=cloudflare #optional
       #- PROPAGATION= #optional
       #- DUCKDNSTOKEN= #optional
-      - EMAIL= lazzariomar@icalbino.it
+      - EMAIL= xxxxxx@yyyyyyy.it
       - ONLY_SUBDOMAINS=false #optional
       - EXTRA_DOMAINS=corsi.scuolabit.it,calibre.scuolabit.it,etherpad.scuolabit.it
       - STAGING=false #optional
